@@ -1,18 +1,10 @@
-// ------------------------------------------
-//  Created by Jean-Michel Bruel on 2021-03.
-//  Copyright (c) 2021 IRIT/U. Toulouse. All rights reserved.
-// ------------------------------------------
 = Innopolis University MAP-S21 Project
-Jean-Michel Bruel <jbruel@gmail.com>
-v2021.1, {localdate}
 :status: bottom
 :inclusion:
 :experimental:
 // ------------------------------------------
 :icons: font
-:imagesdir: images
 
-:dronology: https://dronology.info[Dronology]
 
 // Specific to GitHub
 ifdef::env-github[]
@@ -30,25 +22,28 @@ Here is context of the project
 == Requirements
 Requirements to the project
 
-=====
+== Initial Product Backlog
 
-== Initial Product Backlog (last update: 2021-03-27)
-
-===  Initial Client Features for V1
+:numbered!:
+===  Initial Client Features
 
 The initial functionalities requested are as follows:
 
+. Feature 1
+. Feature 2
+
 :numbered!:
-==== Initial User Stories examples
-User story 1
-User story 2
+==== User Stories
+. User story 1
+. User story 2
 
-=== Additional functionalities (Product Backlog) V2
-
-All the features of version V1, plus:
+:numbered!:
+== Team
+. Alfiya Musabekova <a.musabekova@innopolis.university>
+. Renat Valeev <r.valeev@innopolis.university>
+. Marina Nikolaeva <m.nikolaeva@innopolis.university>
 
 :numbered!:
 == Useful links
 
 - The materials for the course: http://bit.ly/innopolis-map
-- The inspiring project: {dronology}
