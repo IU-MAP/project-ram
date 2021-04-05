@@ -17,10 +17,13 @@ endif::[]
 
 
 == Context
-Here is context of the project
+A simple database management system which designed to manage hospital. The system should be able to keep track of the records of the doctors, patients, nurses, and other hospital staff. The main aim is to minimize the paperwork of the hospital as minimum as possible, if not completely. 
 
-== Requirements
-Requirements to the project
+== Technologies stack
+. Database - PostgreSQL
+. Database management - Java/Python
+. User Interface - Java
+. Tests - Python
 
 == Initial Product Backlog
 
@@ -29,13 +32,32 @@ Requirements to the project
 
 The initial functionalities requested are as follows:
 
-. Feature 1
-. Feature 2
+. Multi user account system
+. Monitoring the whole hospital system
+. Management of all types of users’ account
+. Notice Board
+. Appointment Management
+. View Appointments
+. Notifications
+. Medical History
+. Invoice Management
+. Medical Report Management
+. Internal Communication
+. Responsive User Interfaces
 
 :numbered!:
 ==== User Stories
-. User story 1
-. User story 2
+. As a user, I want to be able to authorize into a system
+. As a user, I want to be able to view notifications
+. As a patient, I want to be able to see the schedule of the doctors
+. As a patient, I want to be able to setup/cancel an appointment with the needed doctor
+. As a patient, I want to be able to get the medical certificate
+. As a doctor, I want to see the upcoming appointments
+. As a doctor, I want to be able to edit patient history
+. As a bookkeeper, I want to setup automated salary payment
+. As a receptionist, I want to be able to create patient history
+. As a receptionist, I want to be able to assign call to ambulance
+
 
 :numbered!:
 == Team
