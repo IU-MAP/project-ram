@@ -69,3 +69,4 @@ The initial functionalities requested are as follows:
 == Useful links
 
 - The materials for the course: http://bit.ly/innopolis-map
+- Trello: https://trello.com/b/JTL05fyN
