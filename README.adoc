@@ -55,7 +55,7 @@ The initial functionalities requested are as follows:
 
 == Sprint 1
 . Created Use case diagram of the project
-![Use case diagram](https://github.com/IU-MAP/project-ram/blob/master/images/use_case_diagram.png)
+![alt text](images/use_case_diagram.png "Use case diagram")
 . Created database schema
 .
 .
