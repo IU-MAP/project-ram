@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501fcde6-887f-48e9-9b86-32bea897d8bc" name="Default Changelist" comment="add project to template and edited labels">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hello_professor.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello_professor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +41,7 @@
       <option name="presentableId" value="Default" />
       <updated>1618314088024</updated>
       <workItem from="1618314094021" duration="4954000" />
-      <workItem from="1618859057636" duration="686000" />
+      <workItem from="1618859057636" duration="863000" />
     </task>
     <task id="LOCAL-00001" summary="change template for US">
       <created>1618318047972</created>
@@ -65,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618319368284</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add project to template and edited labels">
+      <created>1618859764577</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618859764577</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
