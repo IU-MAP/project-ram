@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="501fcde6-887f-48e9-9b86-32bea897d8bc" name="Default Changelist" comment="add project to template and edited labels">
-      <change beforePath="$PROJECT_DIR$/hello_professor.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello_professor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +119,8 @@
     <MESSAGE value="change template for US" />
     <MESSAGE value="deleted US from readme" />
     <MESSAGE value="add project to template and edited labels" />
-    <option name="LAST_COMMIT_MESSAGE" value="add project to template and edited labels" />
+    <MESSAGE value="edited program" />
+    <MESSAGE value="s" />
+    <option name="LAST_COMMIT_MESSAGE" value="s" />
   </component>
 </project>
