@@ -54,21 +54,24 @@ The initial functionalities requested are as follows:
 6. Wrote a simple program to make sure everything is correct
 
 == Sprint 1
-0. Finish work from Sprint0 0 (created branch policy, [user story] and [task] templates)
+0. Finish work from Sprint0 (created branch policy, [user story] and [task] templates)
 1. Created database schema
 2. Created Use case diagram of the project
+3. Update documentation
 
 :imagesdir: images
 image:use_case_diagram.png[Use case diagram]
 
 == Sprint 2
-1. Read and understand Continuous integration in github
-2. Made initial user interface
+1. Finish work from Sprint 1
+2. Read and understand Continuous integration in github
+3. Made initial user interface
+4. Update documentation
 
 :imagesdir: images
 image:mvp.png[mvp]
 
-== Sprint 3
+== TODO Sprint 3
 1. Connected database to java
 2. Filled the database by random values
 
