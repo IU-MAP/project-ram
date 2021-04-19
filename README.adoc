@@ -46,19 +46,6 @@ The initial functionalities requested are as follows:
 . Responsive User Interfaces
 
 :numbered!:
-==== User Stories
-. As a user, I want to go to the profile page so that I see account information and future appointments 
-. As a user, I want to get notifications about the future appointments so that I remember about them 
-. As a patient, I want to see the schedule of the doctors so that I can match my schedule with the doctor's schedule
-. As a patient, I want to setup/cancel an appointment with the needed doctor so that I can go for treatment
-. As a patient, I want to get the medical certificate so that I can get sick leave
-. As a doctor, I want to see the upcoming appointments so that I can prepare for the patient
-. As a doctor, I want to edit patient history so that I won't forget what happen to the patient
-. As a receptionist, I want to create patient history so that each patient will have one
-. As a receptionist, I want to assign call to the ambulance so that it can provide fast emergency help
-
-
-:numbered!:
 == Team
 . Alfiya Musabekova <a.musabekova@innopolis.university>
 . Renat Valeev <r.valeev@innopolis.university>
