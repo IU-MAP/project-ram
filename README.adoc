@@ -46,26 +46,32 @@ The initial functionalities requested are as follows:
 . Responsive User Interfaces
 
 == Sprint 0
-. The project "Hospital management system" was selected
-. Updated the Readme page was 
-. Selected product owner: Renat Valeev
-. Selected technologies to be used: PosgreSQL, Python, Java
-. Determined the Initial Client Features
-. Wrote a simple program to make sure everything is correct
+1. The project "Hospital management system" was selected
+2. Updated the Readme page 
+3. Selected product owner: Renat Valeev
+4. Selected technologies to be used: PosgreSQL, Python, Java
+5. Determined the Initial Client Features
+6. Wrote a simple program to make sure everything is correct
 
 == Sprint 1
-. Created Use case diagram of the project
+0. Finish work from Sprint0 0 (created branch policy, [user story] and [task] templates)
+1. Created database schema
+2. Created Use case diagram of the project
 
 :imagesdir: images
 image:use_case_diagram.png[Use case diagram]
 
-
-. Created database schema
-
-
 == Sprint 2
-.
-.
+1. Read and understand Continuous integration in github
+2. Made initial user interface
+
+:imagesdir: images
+image:mvp.png[mvp]
+
+== Sprint 3
+1. Connected database to java
+2. Filled the database by random values
+
 
 
 :numbered!:
