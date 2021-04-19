@@ -15,6 +15,12 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
+== Contents
+
+* [Contlext](==context)
+
+* [Initial Product Backlog](=initial-client-backlog)
+
 
 == Context
 A simple database management system which designed to manage hospital. The system should be able to keep track of the records of the doctors, patients, nurses, and other hospital staff. The main aim is to minimize the paperwork of the hospital as minimum as possible, if not completely. 
@@ -55,10 +61,13 @@ The initial functionalities requested are as follows:
 
 == Sprint 1
 . Created Use case diagram of the project
-![alt text](images/use_case_diagram.png "Use case diagram")
+
+:imagesdir: images
+image:use_case_diagram.png[Use case diagram]
+
+
 . Created database schema
-.
-.
+
 
 == Sprint 2
 .
