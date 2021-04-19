@@ -45,6 +45,26 @@ The initial functionalities requested are as follows:
 . Internal Communication
 . Responsive User Interfaces
 
+== Sprint 0
+. The project "Hospital management system" was selected
+. Updated the Readme page was 
+. Selected product owner: Renat Valeev
+. Selected technologies to be used: PosgreSQL, Python, Java
+. Determined the Initial Client Features
+. Wrote a simple program to make sure everything is correct
+
+== Sprint 1
+. Created Use case diagram of the project
+![Use case diagram](https://github.com/IU-MAP/project-ram/blob/master/images/use_case_diagram.png)
+. Created database schema
+.
+.
+
+== Sprint 2
+.
+.
+
+
 :numbered!:
 == Team
 . Alfiya Musabekova <a.musabekova@innopolis.university>
