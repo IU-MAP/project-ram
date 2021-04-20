@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
+   <children>
+      <Text layoutX="206.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello user!" textAlignment="CENTER" wrappingWidth="188.7294921875" />
+      <TextField layoutX="309.0" layoutY="96.0" />
+      <Text layoutX="96.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your name:" wrappingWidth="220.7294921875" />
+   </children>
+</AnchorPane>
