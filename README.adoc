@@ -74,7 +74,7 @@ image:mvp.png[mvp]
 == TODO Sprint 3
 1. Connected database to java
 2. Filled the database by random values
-
+3. Try to setup CI
 
 
 :numbered!:
