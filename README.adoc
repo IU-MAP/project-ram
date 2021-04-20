@@ -64,7 +64,7 @@ image:use_case_diagram.png[Use case diagram]
 
 == Sprint 2
 1. Finish work from Sprint 1
-2. Read and understand Continuous integration in github
+2. Read and understand Continuous integration in github (curret issue: never worked with GitHub Action, need more time to get used to it)
 3. Made initial user interface
 4. Update documentation
 
