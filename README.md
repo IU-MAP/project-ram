@@ -10,6 +10,8 @@
 * [Sprint 2](#sprint-2)
 * [Sprint 3](#sprint-3)
 * [TODO Sprint 4](#todo-sprint-4)
+* [Team Members](#team-members)
+* [Useful Links](#useful-links)
 
 ## Context
 
@@ -92,13 +94,14 @@ The initial functionalities requested are as follows:
 
 ## Sprint 3
 
-1. Connected database to java
+1. Filled the database by random values (took files from the Internet with random names and surnames)
 
-2. Filled the database by random values
-
-3. Try to setup CI
 
 ## TODO Sprint 4
+
+1. Connected database to java
+
+2. Add tests for app
 
 ## Team Members
 
