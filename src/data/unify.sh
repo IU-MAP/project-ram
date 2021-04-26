@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # This script is intend to unify lines in the files in current directory
-# @unaimillan
 
 for fl in ./*.txt;
 do
