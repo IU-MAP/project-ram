@@ -94,7 +94,7 @@ The initial functionalities requested are as follows:
 
 ## Sprint 3
 
-1. Filled the database by random values (took files from the Internet with random names and surnames)
+1. Fill the database by random values (took files from the Internet with random names and surnames)
 
 
 ## TODO Sprint 4
