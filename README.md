@@ -5,10 +5,7 @@
 * [Context](#context)
 * [Technology stack](#technology-stack)
 * [Initial Product Backlog](#initial-product-backlog)
-* [Sprint 0](#sprint-0)
-* [Sprint 1](#sprint-1)
-* [Sprint 2](#sprint-2)
-* [Sprint 3](#sprint-3)
+* [Sprints](#sprints)
 * [TODO Sprint 4](#todo-sprint-4)
 * [Team Members](#team-members)
 * [Useful Links](#useful-links)
@@ -54,7 +51,9 @@ The initial functionalities requested are as follows:
 
 12. Responsive User Interfaces
 
-## Sprint 0
+## Sprints
+
+### Sprint 0
 
 1. The project "Hospital management system" was selected
 
@@ -68,7 +67,7 @@ The initial functionalities requested are as follows:
 
 6. Wrote a simple program to make sure everything is correct
 
-## Sprint 1
+### Sprint 1
 
 1. Finish work from Sprint0 (created branch policy, [user story] and [task] templates)
 
@@ -80,7 +79,7 @@ The initial functionalities requested are as follows:
 
 ![use_case_diagram](https://github.com/IU-MAP/project-ram/blob/master/images/use_case_diagram.png)
 
-## Sprint 2
+### Sprint 2
 
 1. Finish work from Sprint 1
 
@@ -92,12 +91,12 @@ The initial functionalities requested are as follows:
 
 ![mvp](https://github.com/IU-MAP/project-ram/blob/master/images/mvp.png)
 
-## Sprint 3
+### Sprint 3
 
 1. Fill the database by random values (took files from the Internet with random names and surnames)
 
 
-## TODO Sprint 4
+### TODO Sprint 4
 
 1. Connected database to java
 
