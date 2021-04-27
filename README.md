@@ -6,7 +6,6 @@
 * [Technology stack](#technology-stack)
 * [Initial Product Backlog](#initial-product-backlog)
 * [Sprints](#sprints)
-* [TODO Sprint 4](#todo-sprint-4)
 * [Team Members](#team-members)
 * [Useful Links](#useful-links)
 
