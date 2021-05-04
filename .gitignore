@@ -1,1 +1,8 @@
+<<<<<<< HEAD
 .idea/
+=======
+#intellij idea
+.idea
+*.iml
+out
+>>>>>>> 0c23febf73658cdd659fa25340333bd048c62c7c
