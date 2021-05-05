@@ -94,10 +94,15 @@ The initial functionalities requested are as follows:
 
 1. Fill the database by random values (took files from the Internet with random names and surnames)
 
-
-### TODO Sprint 4
+### Sprint 4
 
 1. Connected database to java
+
+2. Generated data for tests
+
+### TODO Sprint 5
+
+1. Finilize GUI
 
 2. Add tests for app
 
