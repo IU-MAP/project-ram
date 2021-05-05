@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 #intellij idea
 .idea
 *.iml
 out
-=======
-.idea/
->>>>>>> ff843cc44516afe683c890bdd1b35eb3b53d86c5
