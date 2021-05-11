@@ -153,13 +153,13 @@ INSERT INTO department VALUES (2, 'Managers', 20000);
 INSERT INTO ambulance VALUES (1, true);
 
 INSERT INTO account VALUES (1, 'i_am_alfiya', 'my_password');
-INSERT INTO account VALUES (2, 'i_am_mike', '11223344');
-INSERT INTO account VALUES (3, 'i_am_jam', '1234567890');
+INSERT INTO account VALUES (2, 'i_am_renat', '11223344');
+INSERT INTO account VALUES (3, 'i_am_marina', '1234567890');
 INSERT INTO account VALUES (4, 'i_am_ruslan', '12345');
 
 INSERT INTO "user" VALUES (1, 'Alfiya', 'Musabekova', 'F', 'patient', null, null, 'Universitetskaya 1', '89961211204', 18, 1);
-INSERT INTO "user" VALUES (2, 'Mike', 'Kuskov', 'M', 'doctor', 1, 1, 'Sadovaya 15a', '87778889900', 28, 2);
-INSERT INTO "user" VALUES (3, 'Jameel', 'Mukha', 'M', 'manager', 2, null, 'Luiz Street 12', '85552220011', 35, 3);
+INSERT INTO "user" VALUES (2, 'Renat', 'Valeev', 'M', 'doctor', 1, 1, 'Sadovaya 15a', '87778889900', 28, 2);
+INSERT INTO "user" VALUES (3, 'Marina', 'Nikolaeva', 'M', 'manager', 2, null, 'Luiz Street 12', '85552220011', 35, 3);
 INSERT INTO "user" VALUES (4, 'Ruslan', 'Muravev', 'M', 'patient', null, null, 'Bauman Street 15/65', '81552443320', 20, 4);
 
 INSERT INTO notification VALUES (1, 2, 'I need more collegues');

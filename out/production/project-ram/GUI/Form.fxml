@@ -18,32 +18,32 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="162.0" prefWidth="100.0" spacing="5.0">
                <children>
-                  <TextField fx:id="tf1_id" prefWidth="101.0" text="i_am_alfiya" />
-                  <Button mnemonicParsing="false" onAction="#queryBtn1" text="Query 1" />
+                  <TextField fx:id="tf1_id" prefWidth="101.0" text="Alfiya" />
+                  <Button mnemonicParsing="false" onAction="#queryBtn1" text="First name" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="162.0" prefWidth="100.0" spacing="5.0">
                <children>
-                  <TextField id="tf1_id" fx:id="tf2_id" prefWidth="101.0" text="2017-04-07" />
-                  <Button mnemonicParsing="false" onAction="#queryBtn2" text="Query 2" />
+                  <TextField id="tf1_id" fx:id="tf2_id" prefWidth="101.0" text="Musabekova" />
+                  <Button mnemonicParsing="false" onAction="#queryBtn2" text="Last name" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="162.0" prefWidth="100.0" spacing="5.0">
                <children>
-                  <TextField id="tf1_id" fx:id="tf3_id" prefWidth="101.0" text="2017-04-07" />
-                  <Button mnemonicParsing="false" onAction="#queryBtn3" text="Query 3" />
+                  <TextField id="tf1_id" fx:id="tf3_id" prefWidth="101.0" text="i_am_alfiya" />
+                  <Button mnemonicParsing="false" onAction="#queryBtn3" text="Login" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="162.0" prefWidth="100.0" spacing="5.0">
                <children>
-                  <TextField id="tf1_id" fx:id="tf4_id" prefWidth="101.0" text="2017-04-07" />
-                  <Button mnemonicParsing="false" onAction="#queryBtn4" text="Query 4" />
+                  <TextField id="tf1_id" fx:id="tf4_id" prefWidth="101.0" text="18" />
+                  <Button mnemonicParsing="false" onAction="#queryBtn4" text="Age" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="162.0" prefWidth="100.0" spacing="5.0">
                <children>
-                  <TextField id="tf1_id" fx:id="tf5_id" prefWidth="101.0" text="2017-04-07" />
-                  <Button mnemonicParsing="false" onAction="#queryBtn5" text="Query 5" />
+                  <TextField id="tf1_id" fx:id="tf5_id" prefWidth="101.0" text="patient" />
+                  <Button mnemonicParsing="false" onAction="#queryBtn5" text="Role" />
                </children>
             </VBox>
          </children>

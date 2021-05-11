@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cba9db9a-c4f8-4c99-9c8c-6d8ffec76041" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project-ram/GUI/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project-ram/GUI/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project-ram/GUI/Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project-ram/GUI/Form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project-ram/GUI/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/postgres_insert.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/postgres_insert.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/connect/DBConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/create.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1620690790079</updated>
-      <workItem from="1620690797499" duration="1591000" />
+      <workItem from="1620690797499" duration="7063000" />
     </task>
     <servers />
   </component>

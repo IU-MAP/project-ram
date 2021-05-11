@@ -85,31 +85,11 @@ public class Controller {
     @FXML
     void queryBtn1() {
 
-        String login = tf1_id.getText();
+        String first_name = tf1_id.getText();
 
-        String sql = "WITH appointment_for_current AS\n" +
-                "         (\n" +
-                "             SELECT *\n" +
-                "             FROM (SELECT id as pid\n" +
-                "                   FROM patient\n" +
-                "                   WHERE user_ssn in (\n" +
-                "                       SELECT ssn\n" +
-                "                       FROM \"user\"\n" +
-                "                                JOIN account on account_id = account.id\n" +
-                "                       WHERE login = '" + login + "' AND gender = 'F')\n" +
-                "                  ) as current_patient\n" +
-                "                      JOIN appointment on for_patient_id = pid\n" +
-                "         )\n" +
-                "SELECT first_name, last_name\n" +
-                "FROM \"user\"\n" +
-                "WHERE ssn in (SELECT appointed_by_user_ssn\n" +
-                "              FROM appointment_for_current\n" +
-                "              WHERE date in (SELECT max(date) FROM appointment_for_current)\n" +
-                ")\n" +
-                "  AND ((left(first_name, 1) = 'M' AND left(last_name, 1) <> 'M') OR\n" +
-                "       (left(first_name, 1) = 'L' AND left(last_name, 1) <> 'L') OR\n" +
-                "       (left(first_name, 1) <> 'M' AND left(last_name, 1) = 'M') OR\n" +
-                "       (left(first_name, 1) <> 'L' AND left(last_name, 1) = 'L'));\n";
+        String sql = "SELECT *\n" +
+                     "FROM \"user\"\n" +
+                     "WHERE first_name = '" + first_name + "';\n";
 
         resultField.appendText(connector.query(sql));
         resultField.appendText("----End Of Query----\n");
@@ -117,42 +97,18 @@ public class Controller {
 
     @FXML
     void queryBtn2() {
-
-        String date = tf2_id.getText();
-
-
-        String sql = "SELECT ssn,\n" +
-                "       first_name,\n" +
-                "       last_name,\n" +
-                "       to_char(DATE '2019-11-17'+ INTERVAL '1 day' * day_of_week, 'dy') as weekday,\n" +
-                "       total,\n" +
-                "       statistic_about_appointments.total / count_of_workweeks.amount_of_work_weeks :: double precision as average\n" +
-                "FROM (\n" +
-                "         SELECT appointed_by_user_ssn,\n" +
-                "                day_of_week,\n" +
-                "                count(date) as total\n" +
-                "         FROM (\n" +
-                "                  SELECT appointed_by_user_ssn, EXTRACT(dow FROM date) as day_of_week, date\n" +
-                "                  FROM APPOINTMENT\n" +
-                "                  WHERE date >= ('" + date + "'::date - INTERVAL '1 year')\n" +
-                "              ) as doctor_ssn_dow_and_date\n" +
-                "         GROUP BY appointed_by_user_ssn, day_of_week\n" +
-                "     ) as statistic_about_appointments\n" +
-                "         JOIN\n" +
-                "     (\n" +
-                "         SELECT distinct appointed_by_user_ssn, count(week) as amount_of_work_weeks\n" +
-                "         FROM (\n" +
-                "                  SELECT appointed_by_user_ssn, EXTRACT(week FROM date) as week\n" +
-                "                  FROM appointment\n" +
-                "                  WHERE date >= ('" + date + "'::date - INTERVAL '1 year')\n" +
-                "              ) as doctor_works_in_week\n" +
-                "         GROUP BY appointed_by_user_ssn\n" +
-                "     ) as count_of_workweeks\n" +
-                "     on count_of_workweeks.appointed_by_user_ssn = statistic_about_appointments.appointed_by_user_ssn\n" +
-                "         JOIN \"user\" on count_of_workweeks.appointed_by_user_ssn = ssn\n" +
-                "WHERE role = 'doctor'\n" +
-                "ORDER BY ssn, day_of_week;\n";
-
+        String first_name = tf1_id.getText();
+        String last_name = tf2_id.getText();
+        String sql = "";
+        if (first_name != null && !first_name.trim().isEmpty())
+            sql = "SELECT *\n" +
+                    "FROM \"user\"\n" +
+                    "WHERE first_name = '" + first_name + "'" +
+                    "AND last_name = '" + last_name + "';\n";
+        else
+            sql = "SELECT *\n" +
+                  "FROM \"user\"\n" +
+                  "WHERE last_name = '" + last_name + "';\n";
 
         resultField.appendText(connector.query(sql));
         resultField.appendText("----End Of Query----\n");
@@ -161,33 +117,32 @@ public class Controller {
     @FXML
     void queryBtn3() {
 
-        String date = tf3_id.getText();
-
-        String sql = "-- Query 3\n" +
-                "\n" +
-                "SELECT first_name || ' ' || last_name as twice_a_week\n" +
-                "FROM \"user\" JOIN\n" +
-                "     (SELECT count(date) as num, user_ssn\n" +
-                "      FROM patient JOIN appointment a on patient.id = a.for_patient_id\n" +
-                "      WHERE EXTRACT('week' from date) = EXTRACT('week' from '" + date + " 00:00:01'::timestamp)\n" +
-                "      GROUP BY patient.id) as week1 on ssn = week1.user_ssn\n" +
-                "      JOIN\n" +
-                "     (SELECT count(date) as num, user_ssn\n" +
-                "      FROM patient JOIN appointment a on patient.id = a.for_patient_id\n" +
-                "      WHERE EXTRACT('week' from date) = EXTRACT('week' from '" + date + " 00:00:01'::timestamp) - 1\n" +
-                "      GROUP BY patient.id) as week2 on ssn = week2.user_ssn\n" +
-                "      JOIN\n" +
-                "     (SELECT count(date) as num, user_ssn\n" +
-                "      FROM patient JOIN appointment a on patient.id = a.for_patient_id\n" +
-                "      WHERE EXTRACT('week' from date) = EXTRACT('week' from '" + date + " 00:00:01'::timestamp) - 2\n" +
-                "      GROUP BY patient.id) as week3 on ssn = week3.user_ssn\n" +
-                "      JOIN\n" +
-                "     (SELECT count(date) as num, user_ssn\n" +
-                "      FROM patient JOIN appointment a on patient.id = a.for_patient_id\n" +
-                "      WHERE EXTRACT('week' from date) = EXTRACT('week' from '" + date + " 00:00:01'::timestamp) - 3\n" +
-                "      GROUP BY patient.id) as week4 on ssn = week4.user_ssn\n" +
-                "WHERE week1.num >= 2 AND week1.num >= 2 AND week3.num >= 2 AND week4.num >= 2;\n";
-
+        String login = tf3_id.getText();
+        String first_name = tf1_id.getText();
+        String last_name = tf2_id.getText();
+        String sql = "";
+        if (first_name != null && !first_name.trim().isEmpty())
+            if (last_name != null && !last_name.trim().isEmpty())
+                sql = "SELECT *\n" +
+                        "FROM \"user\"\n" +
+                        "WHERE first_name = '" + first_name + "' " +
+                        "AND last_name = '" + last_name + "' " +
+                        "AND ssn = (SELECT id FROM account WHERE login = '" + login + "');\n";
+            else
+                sql = "SELECT *\n" +
+                        "FROM \"user\"\n" +
+                        "WHERE first_name = '" + first_name + "' " +
+                        "AND ssn = (SELECT id FROM account WHERE login = '" + login + "');\n";
+        else
+            if (last_name != null && !last_name.trim().isEmpty())
+                sql = "SELECT *\n" +
+                        "FROM \"user\"\n" +
+                        "WHERE last_name = '" + last_name + "' " +
+                        "AND ssn = (SELECT id FROM account WHERE login = '" + login + "');\n";
+            else
+                sql = "SELECT *\n" +
+                        "FROM \"user\"\n" +
+                        "WHERE ssn = (SELECT id FROM account WHERE login = '" + login + "');\n";
         resultField.appendText(connector.query(sql));
         resultField.appendText("----End Of Query----\n");
     }
@@ -195,92 +150,183 @@ public class Controller {
     @FXML
     void queryBtn4() {
 
-        String date = tf4_id.getText();
-
-        String sql = "WITH possible_charge AS (\n" +
-                "    SELECT *\n" +
-                "    FROM (\n" +
-                "             SELECT 200\n" +
-                "             UNION ALL\n" +
-                "             SELECT 250\n" +
-                "             UNION ALL\n" +
-                "             SELECT 400\n" +
-                "             UNION ALL\n" +
-                "             SELECT 500\n" +
-                "         ) as possible_charge(charge)\n" +
-                ")\n" +
-                "SELECT SUM(charge * amount_of_appointments) as income_in_rubles\n" +
-                "FROM (\n" +
-                "         SELECT age, amount_of_appointments\n" +
-                "         FROM (\n" +
-                "                  SELECT id as patient_id, age\n" +
-                "                  FROM patient\n" +
-                "                           JOIN \"user\" on patient.user_ssn = \"user\".ssn\n" +
-                "              ) as age_of_patient\n" +
-                "                  JOIN\n" +
-                "              (\n" +
-                "                  SELECT for_patient_id, count(app_id) as amount_of_appointments\n" +
-                "                  FROM (\n" +
-                "                           SELECT id as app_id, for_patient_id\n" +
-                "                           FROM appointment\n" +
-                "                           WHERE date >= ('" + date + "'::date - interval '1 month')\n" +
-                "                       ) as appoinments_in_previous_month\n" +
-                "                  GROUP BY for_patient_id\n" +
-                "              ) as amount_of_appoinments_in_previous_month\n" +
-                "              on patient_id = for_patient_id\n" +
-                "     ) as age_and_amount_of_appointments_in_previous_month_of_patient\n" +
-                "         CROSS JOIN possible_charge\n" +
-                "WHERE (age < 50 AND amount_of_appointments < 3 AND charge = 200)\n" +
-                "   OR (age < 50 AND amount_of_appointments >= 3 AND charge = 250)\n" +
-                "   OR (age >= 50 AND amount_of_appointments < 3 AND charge = 400)\n" +
-                "   OR (age >= 50 AND amount_of_appointments >= 3 AND charge = 500);\n";
-
+        String age = tf4_id.getText();
+        String login = tf3_id.getText();
+        String first_name = tf1_id.getText();
+        String last_name = tf2_id.getText();
+        String sql = "";
+        if (login != null && !login.trim().isEmpty())
+            if (first_name != null && !first_name.trim().isEmpty())
+                if (last_name != null && !last_name.trim().isEmpty())
+                    sql = "SELECT *\n" +
+                            "FROM \"user\"\n" +
+                            "WHERE first_name = '" + first_name + "' " +
+                            "AND age = '" + age + "' " +
+                            "AND last_name = '" + last_name + "' " +
+                            "AND ssn = (SELECT id FROM account WHERE login = '" + login + "');\n";
+                else
+                    sql = "SELECT *\n" +
+                            "FROM \"user\"\n" +
+                            "WHERE first_name = '" + first_name + "' " +
+                            "AND age = '" + age + "' " +
+                            "AND ssn = (SELECT id FROM account WHERE login = '" + login + "');\n";
+            else
+                if (last_name != null && !last_name.trim().isEmpty())
+                    sql = "SELECT *\n" +
+                            "FROM \"user\"\n" +
+                            "WHERE last_name = '" + last_name + "' " +
+                            "AND age = '" + age + "' " +
+                            "AND ssn = (SELECT id FROM account WHERE login = '" + login + "');\n";
+                else
+                    sql = "SELECT *\n" +
+                            "FROM \"user\"\n" +
+                            "WHERE age = '" + age + "' " +
+                            "AND ssn = (SELECT id FROM account WHERE login = '" + login + "');\n";
+        else
+            if (first_name != null && !first_name.trim().isEmpty())
+                if (last_name != null && !last_name.trim().isEmpty())
+                    sql = "SELECT *\n" +
+                        "FROM \"user\"\n" +
+                        "WHERE first_name = '" + first_name + "' " +
+                        "AND age = '" + age + "' " +
+                        "AND last_name = '" + last_name + "';\n";
+                else
+                    sql = "SELECT *\n" +
+                        "FROM \"user\"\n" +
+                        "WHERE first_name = '" + first_name + "' " +
+                        "AND age = '" + age + "';\n";
+        else
+            if (last_name != null && !last_name.trim().isEmpty())
+                sql = "SELECT *\n" +
+                    "FROM \"user\"\n" +
+                    "WHERE last_name = '" + last_name + "' " +
+                    "AND age = '" + age + "';\n";
+            else
+                sql = "SELECT *\n" +
+                    "FROM \"user\"\n" +
+                    "WHERE age = '" + age + "';\n";
         resultField.appendText(connector.query(sql));
         resultField.appendText("----End Of Query----\n");
     }
 
     @FXML
     void queryBtn5() {
-
-        String date = tf5_id.getText();
-
-        String sql = "SELECT ssn, first_name, last_name\n" +
-                "FROM(\n" +
-                "    SELECT ssn, first_name, last_name\n" +
-                "    FROM(\n" +
-                "        SELECT ssn, first_name, last_name, count(year) as amount_of_hard_working_years\n" +
-                "        FROM(\n" +
-                "            SELECT ssn, first_name, last_name, year\n" +
-                "            FROM(\n" +
-                "                SELECT ssn, first_name, last_name, year, count(for_patient_id) as patients_in_year\n" +
-                "                FROM(\n" +
-                "                    SELECT distinct ssn, first_name, last_name, EXTRACT(year from date) as year, for_patient_id\n" +
-                "                    FROM \"user\" join appointment on appointed_by_user_ssn = ssn\n" +
-                "                    WHERE role = 'doctor' AND EXTRACT(year from date) > EXTRACT(year from CURRENT_DATE) - 10\n" +
-                "                ) as patients_visited_by_doctor_in_year\n" +
-                "                GROUP BY ssn, first_name, last_name, year\n" +
-                "            ) as amount_of_patient_visited_by_doctor_in_year\n" +
-                "            WHERE patients_in_year >= 5\n" +
-                "        ) as hard_working_years_of_doctor\n" +
-                "        GROUP BY ssn, last_name, first_name\n" +
-                "    ) as amount_of_ard_working_years_of_doctor\n" +
-                "    WHERE amount_of_hard_working_years = 10\n" +
-                ") as doctors_with_not_less_than_5_patients_per_year \n" +
-                "JOIN \n" +
-                "(\n" +
-                "    SELECT ssn as ssn_of_doctor_with_100_patients\n" +
-                "    FROM(\n" +
-                "        SELECT ssn, count(for_patient_id) as total_patients\n" +
-                "        FROM(\n" +
-                "            SELECT distinct ssn, for_patient_id\n" +
-                "            FROM \"user\" join appointment on appointed_by_user_ssn = ssn\n" +
-                "            WHERE role = 'doctor' AND EXTRACT(year from date) > EXTRACT(year from CURRENT_DATE) - 10\n" +
-                "        ) as patients_visited_by_doctor_ssn\n" +
-                "        GROUP BY ssn\n" +
-                "    ) as amount_of_patients_visited_by_doctor_ssn\n" +
-                "    WHERE total_patients >= 100\n" +
-                ") as doctors_with_not_less_than_100_patients \n" +
-                "on ssn = ssn_of_doctor_with_100_patients";
+        String age = tf4_id.getText();
+        String login = tf3_id.getText();
+        String first_name = tf1_id.getText();
+        String last_name = tf2_id.getText();
+        String role = tf5_id.getText();
+        String sql = "";
+        if (age != null && !age.trim().isEmpty())
+            if (login != null && !login.trim().isEmpty())
+                if (first_name != null && !first_name.trim().isEmpty())
+                    if (last_name != null && !last_name.trim().isEmpty())
+                        sql = "SELECT *\n" +
+                                "FROM \"user\"\n" +
+                                "WHERE first_name = '" + first_name + "' " +
+                                "AND age = '" + age + "' " +
+                                "AND last_name = '" + last_name + "' " +
+                                "AND role = '" + role + "' " +
+                                "AND ssn = (SELECT id FROM account WHERE login = '" + login + "');\n";
+                    else
+                        sql = "SELECT *\n" +
+                                "FROM \"user\"\n" +
+                                "WHERE first_name = '" + first_name + "' " +
+                                "AND age = '" + age + "' " +
+                                "AND role = '" + role + "' " +
+                                "AND ssn = (SELECT id FROM account WHERE login = '" + login + "');\n";
+                else
+                    if (last_name != null && !last_name.trim().isEmpty())
+                        sql = "SELECT *\n" +
+                                "FROM \"user\"\n" +
+                                "WHERE last_name = '" + last_name + "' " +
+                                "AND age = '" + age + "' " +
+                                "AND role = '" + role + "' " +
+                                "AND ssn = (SELECT id FROM account WHERE login = '" + login + "');\n";
+                    else
+                        sql = "SELECT *\n" +
+                                "FROM \"user\"\n" +
+                                "WHERE age = '" + age + "' " +
+                                "AND role = '" + role + "' " +
+                                "AND ssn = (SELECT id FROM account WHERE login = '" + login + "');\n";
+            else
+                if (first_name != null && !first_name.trim().isEmpty())
+                    if (last_name != null && !last_name.trim().isEmpty())
+                        sql = "SELECT *\n" +
+                                "FROM \"user\"\n" +
+                                "WHERE first_name = '" + first_name + "' " +
+                                "AND age = '" + age + "' " +
+                                "AND role = '" + role + "' " +
+                                "AND last_name = '" + last_name + "';\n";
+                    else
+                        sql = "SELECT *\n" +
+                                "FROM \"user\"\n" +
+                                "WHERE first_name = '" + first_name + "' " +
+                                "AND role = '" + role + "' " +
+                                "AND age = '" + age + "';\n";
+                else
+                    if (last_name != null && !last_name.trim().isEmpty())
+                        sql = "SELECT *\n" +
+                                "FROM \"user\"\n" +
+                                "WHERE last_name = '" + last_name + "' " +
+                                "AND role = '" + role + "' " +
+                                "AND age = '" + age + "';\n";
+                    else
+                        sql = "SELECT *\n" +
+                                "FROM \"user\"\n" +
+                                "WHERE age = '" + age + "' " +
+                                "AND role = '" + role + "';\n";
+        else
+            if (login != null && !login.trim().isEmpty())
+                if (first_name != null && !first_name.trim().isEmpty())
+                    if (last_name != null && !last_name.trim().isEmpty())
+                        sql = "SELECT *\n" +
+                            "FROM \"user\"\n" +
+                            "WHERE first_name = '" + first_name + "' " +
+                            "AND last_name = '" + last_name + "' " +
+                            "AND role = '" + role + "' " +
+                            "AND ssn = (SELECT id FROM account WHERE login = '" + login + "');\n";
+                    else
+                        sql = "SELECT *\n" +
+                            "FROM \"user\"\n" +
+                            "WHERE first_name = '" + first_name + "' " +
+                            "AND role = '" + role + "' " +
+                            "AND ssn = (SELECT id FROM account WHERE login = '" + login + "');\n";
+                else
+                    if (last_name != null && !last_name.trim().isEmpty())
+                        sql = "SELECT *\n" +
+                        "FROM \"user\"\n" +
+                        "WHERE last_name = '" + last_name + "' " +
+                        "AND role = '" + role + "' " +
+                        "AND ssn = (SELECT id FROM account WHERE login = '" + login + "');\n";
+                    else
+                        sql = "SELECT *\n" +
+                        "FROM \"user\"\n" +
+                        "AND role = '" + role + "' " +
+                        "AND ssn = (SELECT id FROM account WHERE login = '" + login + "');\n";
+            else
+                if (first_name != null && !first_name.trim().isEmpty())
+                    if (last_name != null && !last_name.trim().isEmpty())
+                        sql = "SELECT *\n" +
+                        "FROM \"user\"\n" +
+                        "WHERE first_name = '" + first_name + "' " +
+                        "AND role = '" + role + "' " +
+                        "AND last_name = '" + last_name + "';\n";
+                    else
+                        sql = "SELECT *\n" +
+                        "FROM \"user\"\n" +
+                        "WHERE first_name = '" + first_name + "' " +
+                        "AND role = '" + role + "';\n";
+                else
+                    if (last_name != null && !last_name.trim().isEmpty())
+                        sql = "SELECT *\n" +
+                            "FROM \"user\"\n" +
+                            "WHERE last_name = '" + last_name + "' " +
+                            "AND role = '" + role + "';\n";
+                    else
+                        sql = "SELECT *\n" +
+                                "FROM \"user\"\n" +
+                                "WHERE role = '" + role + "';\n";
 
         resultField.appendText(connector.query(sql));
         resultField.appendText("----End Of Query----\n");
