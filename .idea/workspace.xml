@@ -1,37 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="501fcde6-887f-48e9-9b86-32bea897d8bc" name="Default Changelist" comment="add project to template and edited labels">
-      <change afterPath="$PROJECT_DIR$/db/cleanDB.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/main_users.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DBConnect.java" afterDir="false" />
+    <list default="true" id="cba9db9a-c4f8-4c99-9c8c-6d8ffec76041" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config.cfg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUI_Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-ram/GUI/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project-ram/GUI/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-ram/GUI/Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project-ram/GUI/Form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project-ram/GUI/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/postgres_insert.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/postgres_insert.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/connect/DBConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI_Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="dev_renat" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1r7532J9AjethcpuGEYNwoFvmy5" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1sMmMIfnBdam8v3yOPIiAuYzoaK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,13 +32,24 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/postgresql-42.2.20.jar" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager">
+    <configuration name="GUI_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUI_Main" />
+      <module name="project-ram" />
+      <option name="VM_PARAMETERS" value="&#9; --module-path &quot;$PROJECT_DIR$/libs/openjfx-11.0.2_linux-x64_bin-sdk/javafx-sdk-11.0.2/lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -59,60 +61,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GUI_Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="501fcde6-887f-48e9-9b86-32bea897d8bc" name="Default Changelist" comment="" />
-      <created>1618314088024</created>
+      <changelist id="cba9db9a-c4f8-4c99-9c8c-6d8ffec76041" name="Default Changelist" comment="" />
+      <created>1620690790079</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1618314088024</updated>
-      <workItem from="1618314094021" duration="4954000" />
+      <updated>1620690790079</updated>
+      <workItem from="1620690797499" duration="1591000" />
     </task>
-    <task id="LOCAL-00001" summary="change template for US">
-      <created>1618318047972</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1618318047973</updated>
-    </task>
-    <task id="LOCAL-00002" summary="deleted US from readme">
-      <created>1618318579765</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1618318579765</updated>
-    </task>
-    <task id="LOCAL-00003" summary="add project to template and edited labels">
-      <created>1618319368284</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1618319368284</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="change template for US" />
-    <MESSAGE value="deleted US from readme" />
-    <MESSAGE value="add project to template and edited labels" />
-    <option name="LAST_COMMIT_MESSAGE" value="add project to template and edited labels" />
   </component>
 </project>
