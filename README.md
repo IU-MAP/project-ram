@@ -137,6 +137,21 @@ host    all             all             127.0.0.1/32            trust
 
 3. Update documentation 
 
+Relational Scheme: 
+
+![relational_scheme](https://github.com/IU-MAP/project-ram/blob/dev_alfiya/images/Relational_Scheme.png)
+
+GUI:
+
+![gui](https://github.com/IU-MAP/project-ram/blob/dev_alfiya/images/Screenshot%20from%202021-05-11%2016-47-55.png)
+
+Text areas are name, surname, login, age, role.
+
+Buttons are for clean data and to perform search query by name, surname, login, age, role.
+
+
+
+
 
 ## Team Members
 
