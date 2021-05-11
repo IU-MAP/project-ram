@@ -50,6 +50,35 @@ The initial functionalities requested are as follows:
 
 12. Responsive User Interfaces
 
+## Setup Java
+1. Clone repository
+2. Setup SDK 11 version in IntelliJ
+3. Go to File -> Project Structure -> Modules -> '+' -> JARs or Directories
+4. Select `project-ram/libs/openjfx-11.0.2_linux-x64_bin-sdk/javafx-sdk-11.0.2/lib`
+5. Go to File -> Project Structure -> Libraries -> '+' -> Java
+6. Select `project-ram/libs/postgresql-42.2.20.jar`
+7. Click Apply and OK
+8. Run 'GUI_Main.main()'
+9. Go to Run -> Edit Configuration -> Modify Options -> Add VM Options
+10. Add this: `<path-to-folder>/project-ram/libs/openjfx-11.0.2_linux-x64_bin-sdk/javafx-sdk-11.0.2/lib`
+
+## Setup Database
+1. Install PostgreSQL `sudo apt install postgresql`
+2. Open file `/etc/postgresql/10/main/pg_hba.conf`
+3. Replace _md5_ with _trust_
+```bash
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            md5
+```
+
+```bash
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            trust
+```
+4. Restart service `sudo service postgresql restart`
+5. Populate database by running `cd project-ram/sql && ./populate.sh`
+6. (Optional) To delete database `cd project-ram/sql && ./drop.sh`
+
 ## Sprints
 
 ### Sprint 0
@@ -100,11 +129,29 @@ The initial functionalities requested are as follows:
 
 2. Generated data for tests
 
-### TODO Sprint 5
+### Sprint 5
 
 1. Finilize GUI
 
 2. Add tests for app
+
+3. Update documentation 
+
+Relational Scheme: 
+
+![relational_scheme](https://github.com/IU-MAP/project-ram/blob/dev_alfiya/images/Relational_Scheme.png)
+
+GUI:
+
+![gui](https://github.com/IU-MAP/project-ram/blob/dev_alfiya/images/Screenshot%20from%202021-05-11%2016-47-55.png)
+
+Text areas are name, surname, login, age, role.
+
+Buttons are for clean data and to perform search query by name, surname, login, age, role.
+
+
+
+
 
 ## Team Members
 
