@@ -1,1 +1,4 @@
-.idea/
+#intellij idea
+.idea
+*.iml
+out
