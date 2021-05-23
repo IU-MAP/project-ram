@@ -13,6 +13,8 @@
 
 A simple database management system which designed to manage hospital. The system should be able to keep track of the records of the doctors, patients, nurses, and other hospital staff. The main aim is to minimize the paperwork of the hospital as minimum as possible, if not completely.
 
+**[Final report](https://github.com/IU-MAP/project-ram/blob/master/MAP%20Report.pdf)**
+
 ## Technology stack
 
 * Database - PostgreSQL
